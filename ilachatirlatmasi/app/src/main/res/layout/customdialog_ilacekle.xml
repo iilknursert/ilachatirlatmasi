@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/customdialog_ilacekle_textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/customdialog_ilacekle_imageViewClose"
+            android:text="HATIRLATICI OLUŞTURUN"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@id/customdialog_ilacekle_imageViewClose"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_close" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/customdialog_ilacekle_editTextilacismi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="İlaç ismi giriniz"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/customdialog_ilacekle_editDozSayisi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="Doz sayısı giriniz"
+        android:inputType="number"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:textAlignment="center" />
+
+    <!-- Tarih Seçici -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22dp"
+            android:text="Tarih: "
+            android:textSize="15sp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/customdialog_ilacekle_btnSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/butonrenk"
+            android:text="Tarih Seç"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Dinamik Saat Ekleme -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Saatler: "
+            android:textSize="15sp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/customdialog_ilacekle_btnCreateTimePickers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/butonrenk"
+            android:text="Saat Ekle"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Eklenen Saatleri Gösteren Alan -->
+    <LinearLayout
+        android:id="@+id/customdialog_ilacekle_timeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:padding="5dp">
+        <!-- Dinamik olarak saatler buraya eklenecek -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/customdialog_ilacekle_btnclose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/butonrenk"
+            android:text="Kapat"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/customdialog_ilacekle_btnilacgir"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="@color/butonrenk"
+            android:text="Onayla"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

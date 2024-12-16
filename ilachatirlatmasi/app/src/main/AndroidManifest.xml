@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Gerekli izinler -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Uygulamanın bildirim göndermesi için gerekli izin. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Hassas alarmları programlamak için gerekli izin. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Telefonun uyku modunda bile çalışabilmesi için gerekli izin. -->
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ilachatirlatmasi"
+        tools:targetApi="31">
+        <!-- Uygulama seviyesinde genel ayarları ve özellikleri tanımlar. -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- Ana giriş noktası olan MainActivity'yi tanımlar. -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- Uygulamanın başlangıç aktivitesi olduğunu belirtir. -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Bu aktivitenin cihazdaki uygulama çekmecesinde (launcher) görüneceğini belirtir. -->
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ilacekle" />
+        <!-- İlaç ekleme ekranını tanımlayan `ilacekle` aktivitesi. -->
+        <receiver android:name=".AlarmReceiver" android:exported="true" />
+        <!-- Alarm tetiklendiğinde çalışan bir `BroadcastReceiver` olan `AlarmReceiver`. -->
+        <receiver android:name=".StopAlarmReceiver" android:exported="true" />
+        <!-- Alarmı durdurmak için kullanılan bir başka `BroadcastReceiver` olan `StopAlarmReceiver`. -->
+
+    </application>
+
+</manifest>
